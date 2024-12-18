@@ -13,7 +13,7 @@ jobs:
         scripts/build-ubuntu-i386.sh
     - uses: actions/upload-artifact@v3
       with:
-        name: Build
+        name: l32
         path: build
 
   build-linux-amd64:
@@ -26,7 +26,7 @@ jobs:
         scripts/build-ubuntu-amd64.sh
     - uses: actions/upload-artifact@v3
       with:
-        name: Build
+        name: l64
         path: build
 
   build-android-armv7a:
@@ -50,7 +50,7 @@ jobs:
         ./waf.bat build
     - uses: actions/upload-artifact@v3
       with:
-        name: Build
+        name: w32
         path: build
 
   build-windows-amd64:
@@ -63,9 +63,9 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T debug
         ./waf.bat build
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
-        name: Build
+        name: w64
         path: build
 
   build-dedicated-windows-i386:
@@ -80,7 +80,7 @@ jobs:
         ./waf.bat build
     - uses: actions/upload-artifact@v3
       with:
-        name: Build
+        name: w32d
         path: dist
 
   build-dedicated-windows-amd64:
