@@ -8,6 +8,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Build
+        path: dist
     - name: Build linux-i386
       run: |
         scripts/build-ubuntu-i386.sh
@@ -17,6 +21,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Build
+        path: dist
     - name: Build linux-amd64
       run: |
         scripts/build-ubuntu-amd64.sh
@@ -35,6 +43,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Build
+        path: dist
     - name: Build windows-i386
       run: |
         git submodule init && git submodule update
@@ -46,6 +58,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Build
+        path: dist
     - name: Build windows-amd64
       run: |
         git submodule init && git submodule update
